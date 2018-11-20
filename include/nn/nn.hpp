@@ -4,7 +4,7 @@
 
 #ifndef NLAI_NN_HPP
 #define NLAI_NN_HPP
-#include "utlis.h"
+#include "../utlis.h"
 
 class nn {
 

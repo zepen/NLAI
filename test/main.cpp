@@ -1,7 +1,8 @@
-//#include <iostream>
-//
-//int main() {
-//    std::cout << "Just Begin!" << std::endl;
-//
-//    return 0;
-//}
+#include "nn/nn.hpp"
+
+int main(int argc, char**argv) {
+    std::cout << "Just Begin!" << std::endl;
+    nn n;
+    n.show();
+    return 0;
+}
