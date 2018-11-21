@@ -2,7 +2,7 @@
 
 int main(int argc, char**argv) {
     std::cout << "Just Begin!" << std::endl;
-    nn n;
-    n.show();
+    nlai::neural_net::NeuralNet_1 bnn;
+    bnn.show();
     return 0;
 }

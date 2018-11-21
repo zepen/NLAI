@@ -4,6 +4,3 @@
 
 #include "nn.hpp"
 
-void nn::show(){
-    cout << "i am nn" << endl;
-}
