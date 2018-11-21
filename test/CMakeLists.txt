@@ -1,2 +1,4 @@
-SET(MAIN main.cpp)
-add_executable(main ${MAIN})
+cmake_minimum_required(VERSION 3.12)
+project(NLAI)
+message(STATUS "Main CMakeLists")
+

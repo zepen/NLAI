@@ -1,4 +1,4 @@
-#include "nn/nn.hpp"
+#include "../src/nn/nn.hpp"
 
 int main(int argc, char**argv) {
     std::cout << "Just Begin!" << std::endl;
