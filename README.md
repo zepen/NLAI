@@ -1,2 +1,2 @@
 ## NLAI
-Just for learning about ml and dl
+Just for keep learning about machine learning and deep learning
