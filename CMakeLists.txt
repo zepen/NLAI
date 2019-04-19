@@ -22,4 +22,6 @@ add_executable(${PROJECT_NAME}
         src/Supervised/RNN/recurrent_neural_network.cpp
         src/Supervised/RNN/recurrent_neural_network.h
         test/test_main.cpp
-        src/Supervised/Neural_network/neural_network.cpp src/Supervised/Neural_network/neural_network.h)
+        src/Supervised/Neural_network/neural_network.cpp
+        src/Supervised/Neural_network/neural_network.h
+        src/utlis.cpp)
