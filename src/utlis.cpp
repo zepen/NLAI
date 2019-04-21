@@ -44,11 +44,19 @@ void showData(std::vector<std::vector<double>> data){
     }
 }
 
-std::vector<int> generate_random(std::default_random_engine engine, int sample_size, int batch_size){
+int random_unint(unsigned int max, unsigned int seed = 0)
+{
+    static std::default_random_engine e(seed);
+    static std::uniform_int_distribution<int> u(0, max);
+    return u(e);
+}
+
+std::vector<int> generate_random(int sample_size, int batch_size){
     std::vector<int> gen_index(static_cast<unsigned int>(batch_size));
-    std::uniform_int_distribution<unsigned> u(0, static_cast<unsigned int>(sample_size));
     for (int i = 0; i < batch_size; ++i) {
-        gen_index[i] = u(engine);
+        gen_index[i] = random_unint(
+                static_cast<unsigned int>(sample_size),
+                static_cast<unsigned int>(time(nullptr)));
     }
     return gen_index;
 }

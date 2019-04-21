@@ -19,6 +19,7 @@
 std::vector<double > readTxt(const std::string &file_data);
 std::vector<std::vector<double >> getTrainData(int features_size, std::vector<double > read_vec);
 void showData(std::vector<std::vector<double >> data);
-std::vector<int> generate_random(std::default_random_engine engine, int sample_size, int batch_size);
+int random_unint(unsigned int batch_size, unsigned int seed);
+std::vector<int> generate_random(int sample_size, int batch_size);
 
 #endif //NLAI_UTLIS_H
