@@ -24,4 +24,4 @@ add_executable(${PROJECT_NAME}
         test/test_main.cpp
         src/Supervised/Neural_network/neural_network.cpp
         src/Supervised/Neural_network/neural_network.h
-        src/utlis.cpp)
+        src/utlis.cpp src/Supervised/GBDT/gradient_boosting_decision_tree.cpp src/Supervised/GBDT/gradient_boosting_decision_tree.h src/UnSupervised/PCA/principal_component_analysis.cpp src/UnSupervised/PCA/principal_component_analysis.h)

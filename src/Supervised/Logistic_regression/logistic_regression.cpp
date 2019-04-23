@@ -50,6 +50,7 @@ std::vector<double> nlai::logistic_regression::activation_func(std::vector<doubl
     return activate_y;
 }
 
+
 void nlai::logistic_regression::getData(int iter, std::vector<std::vector<double>> train_data, unsigned int batch_size){
     std::vector<int> gen_index = generate_random(train_data.size(), batch_size);
     std::cout << "[INFO] get "<< iter << " step batch data " << std::endl;
@@ -92,6 +93,12 @@ void nlai::logistic_regression::fit(std::vector<std::vector<double>> train_data,
     }
 }
 
+<<<<<<< HEAD
+=======
+std::vector<double> nlai::logistic_regression::predict(std::vector<std::vector<double>> x) {
+    return activation_func(logist(x_data));
+}
+>>>>>>> origin/master
 
 
 std::vector<double> nlai::logistic_regression::get_weights(){
