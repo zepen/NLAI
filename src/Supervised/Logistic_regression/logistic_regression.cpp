@@ -1,3 +1,5 @@
+#include <utility>
+
 //
 // Created by User on 2019/4/18.
 //
@@ -93,13 +95,9 @@ void nlai::logistic_regression::fit(std::vector<std::vector<double>> train_data,
     }
 }
 
-<<<<<<< HEAD
-=======
-std::vector<double> nlai::logistic_regression::predict(std::vector<std::vector<double>> x) {
-    return activation_func(logist(x_data));
+std::vector<double> nlai::logistic_regression::predict(std::vector<std::vector<double>> x_data) {
+    return activation_func(logist(std::move(x_data)));
 }
->>>>>>> origin/master
-
 
 std::vector<double> nlai::logistic_regression::get_weights(){
     return this->weights;
@@ -107,4 +105,12 @@ std::vector<double> nlai::logistic_regression::get_weights(){
 
 double nlai::logistic_regression::get_bias() {
     return this->bias;
+}
+
+std::vector<std::vector<double>> nlai::logistic_regression::get_x_data() {
+    return this->x_data;
+}
+
+std::vector<double> nlai::logistic_regression::get_y_data() {
+    return this->y_data;
 }

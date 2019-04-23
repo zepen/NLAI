@@ -12,8 +12,11 @@ int main(int argc, char**argv) {
     std::vector<std::vector<double>> train_data = getTrainData(5, read_vector);
     showData(train_data);
     auto *lr = new nlai::logistic_regression(4);
-    lr->fit(train_data, 32);
-    lr->pr
+    lr->fit(train_data, 32, 0.01, 100, 0.1);
+    lr->getData(0, train_data, 32);
+    std::vector<double> y_true = lr->get_y_data();
+    std::vector<double> y_pred = lr->predict(lr->get_x_data());
+    confusion_matrix(y_true, y_pred, 0.5);
     delete lr;
     return 0;
 }

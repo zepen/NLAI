@@ -77,10 +77,13 @@ void confusion_matrix(std::vector<double> y_true, std::vector<double> y_pred, do
             CM[0][1] += 1;
         }
     }
-    for (auto &r : CM) {
-        for (auto c : r){
-            std::cout << "|" << c;
+    std::cout << "         ";
+    std::cout << " | y_pred = 0 | y_pred = 1 | " << std::endl;
+    for (int i = 0; i < 2; i++) {
+        std::cout  << "y_true = " << i << "|";
+        for (int j = 0; j < 2; j++){
+            std::cout << "      " << CM[i][j] << "     ";
         }
-        std::cout << std::endl;
+        std::cout << "|" << std::endl;
     }
 }

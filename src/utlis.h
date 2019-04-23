@@ -5,9 +5,9 @@
 #ifndef NLAI_UTLIS_H
 #define NLAI_UTLIS_H
 
-#include <assert.h>
+#include <cassert>
 #include <vector>
-#include <math.h>
+#include <cmath>
 #include <fstream>
 #include<iostream>
 #include <windows.h>
@@ -21,6 +21,6 @@ std::vector<std::vector<double >> getTrainData(int features_size, std::vector<do
 void showData(std::vector<std::vector<double >> data);
 int random_unint(unsigned int batch_size, unsigned int seed);
 std::vector<int> generate_random(int sample_size, int batch_size);
-void confusion_matrix(std::vector<double> y_true, std::vector<double> y_pred);
+void confusion_matrix(std::vector<double> y_true, std::vector<double> y_pred, double threshold);
 
 #endif //NLAI_UTLIS_H
