@@ -84,13 +84,15 @@ void nlai::logistic_regression::fit(std::vector<std::vector<double>> train_data,
             for (int m = 0; m < batch_size; m++){
                 gradient += (this->y_data[m] - predict_y[m]) * this->x_data[m][n];
             }
-            this->weights[n] -= learning_rate * ((double) 1 / batch_size) * gradient;
+            this->weights[n] += learning_rate * ((double) 1 / batch_size) * gradient;
         }
         if (loss_ <= error){
             break;
         }
     }
 }
+
+
 
 std::vector<double> nlai::logistic_regression::get_weights(){
     return this->weights;

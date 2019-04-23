@@ -36,8 +36,9 @@ std::vector<std::vector<double>> getTrainData(int features_size, std::vector<dou
 void showData(std::vector<std::vector<double>> data){
     int i = 0;
     for (auto &d : data) {
+        std::cout << i << " | ";
         for (double num : d) {
-            std::cout << i << " " << num << " ";
+            std::cout << num << " ";
         }
         std::cout << std::endl;
         i++;
@@ -47,7 +48,7 @@ void showData(std::vector<std::vector<double>> data){
 int random_unint(unsigned int max, unsigned int seed = 0)
 {
     static std::default_random_engine e(seed);
-    static std::uniform_int_distribution<int> u(0, max);
+    static std::uniform_int_distribution<int> u(0, max - 1);
     return u(e);
 }
 
@@ -59,4 +60,27 @@ std::vector<int> generate_random(int sample_size, int batch_size){
                 static_cast<unsigned int>(time(nullptr)));
     }
     return gen_index;
+}
+
+void confusion_matrix(std::vector<double> y_true, std::vector<double> y_pred, double threshold){
+    std::cout << "== The confusion Matrix == " <<  std::endl;
+    std::vector<std::vector<double>> CM(2, std::vector<double>(2));
+    for (int i = 0; i < y_true.size(); i++){
+        double predict = y_pred[i] > threshold ? 1.0 : 0.0;
+        if (predict == 0 && y_true[i] == 0){
+            CM[0][0] += 1;
+        } else if (predict == 1 && y_true[i] == 1){
+            CM[1][1] += 1;
+        } else if (predict == 0 && y_true[i] == 1) {
+            CM[1][0] += 1;
+        } else if (predict == 1 && y_true[i] == 0){
+            CM[0][1] += 1;
+        }
+    }
+    for (auto &r : CM) {
+        for (auto c : r){
+            std::cout << "|" << c;
+        }
+        std::cout << std::endl;
+    }
 }

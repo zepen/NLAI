@@ -21,5 +21,6 @@ std::vector<std::vector<double >> getTrainData(int features_size, std::vector<do
 void showData(std::vector<std::vector<double >> data);
 int random_unint(unsigned int batch_size, unsigned int seed);
 std::vector<int> generate_random(int sample_size, int batch_size);
+void confusion_matrix(std::vector<double> y_true, std::vector<double> y_pred);
 
 #endif //NLAI_UTLIS_H
