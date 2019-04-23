@@ -50,7 +50,8 @@ std::vector<double> nlai::logistic_regression::activation_func(std::vector<doubl
     return activate_y;
 }
 
-void nlai::logistic_regression::check_label(std::vector<std::vector<double>> x_data) {
+void nlai::logistic_regression::check_label(std::vector<std::vector<double>> train_data) {
+
 
 }
 
