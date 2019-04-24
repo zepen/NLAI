@@ -12,7 +12,7 @@ void nlai::logistic_regression::show_info() {
     std::cout << "[INFO] This is logistic regression algorithm!" << std::endl;
 }
 
-nlai::logistic_regression::logistic_regression(unsigned int features_size) {
+nlai::logistic_regression::logistic_regression(unsigned int features_size, unsigned labels_num=2) {
     show_info();
     std::cout << "[INFO] init all params..." << std::endl;
     for (int i = 0; i < features_size; i++){
@@ -20,6 +20,7 @@ nlai::logistic_regression::logistic_regression(unsigned int features_size) {
     }
     this->bias = 0;
     this->features_size = features_size;
+    this->label_num = labels_num;
 }
 
 std::vector<double> nlai::logistic_regression::logist(std::vector<std::vector<double>> x_data){
@@ -70,7 +71,12 @@ void nlai::logistic_regression::getData(int iter, std::vector<std::vector<double
         for (int j = 0; j < this->features_size; j++){
             this->x_data[k][j] = train_data[i][j];
         }
-        this->y_data[k] = train_data[i][this->features_size];
+        double real_label = train_data[i][this->features_size];
+        if (real_label > 1 && this->label_num == 2){
+            this->y_data[k] = 1;
+        } else {
+            this->y_data[k] = train_data[i][this->features_size];
+        }
         k++;
     }
 }

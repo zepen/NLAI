@@ -11,7 +11,7 @@ namespace nlai {
     class logistic_regression {
         public:
             logistic_regression();
-            explicit logistic_regression(unsigned int features_size);
+            explicit logistic_regression(unsigned int features_size, unsigned label_num);
             std::vector<double> logist(std::vector<std::vector<double>> x_data);
             double loss(std::vector<double> predict_y, std::vector<double> real_y, unsigned batch_size);
             std::vector<double> activation_func(std::vector<double> predict_y);
@@ -30,6 +30,7 @@ namespace nlai {
             unsigned int features_size;
             std::vector<std::vector<double>> x_data;
             std::vector<double> y_data;
+            unsigned int label_num;
         };
 }
 
