@@ -8,6 +8,8 @@
 
 nlai::logistic_regression::logistic_regression() = default;
 
+nlai::logistic_regression::~logistic_regression() = default;
+
 void nlai::logistic_regression::show_info() {
     std::cout << "[INFO] This is logistic regression algorithm!" << std::endl;
 }

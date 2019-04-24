@@ -10,5 +10,14 @@ class decision_trees {
 
 };
 
+class regression_tree : public decision_trees{
+
+
+};
+
+class classification_tree : public decision_trees{
+
+
+};
 
 #endif //NLAI_DECISION_TREES_H

@@ -5,6 +5,13 @@
 #include "../src/Supervised/Svm/support_vector_machine.h"
 #include "../src/Supervised/Neural_network/neural_network.h"
 
+//class BinaryTree{
+//public:
+//    BinaryTree *rightChild = new BinaryTree();
+//    BinaryTree leftChild;
+//    int values;
+//};
+
 
 int main(int argc, char**argv) {
     std::cout << "Let's start" << std::endl;

@@ -24,6 +24,7 @@ namespace nlai {
             double get_bias();
             std::vector<std::vector<double>> get_x_data();
             std::vector<double> get_y_data();
+            ~logistic_regression();
         private:
             std::vector<double> weights;
             double bias;
