@@ -91,11 +91,15 @@ void nlai::logistic_regression::fit(std::vector<std::vector<double>> train_data,
         double loss_ = loss(predict_y, this->y_data, batch_size);
         std::cout << "The Loss is: " << loss_ << std::endl;
         for (int n = 0; n < this->features_size; n++){
-            double gradient = 0;
+            double gradient_w = 0;
+            double gradient_b = 0;
             for (int m = 0; m < batch_size; m++){
-                gradient += (this->y_data[m] - predict_y[m]) * this->x_data[m][n];
+                gradient_w += (this->y_data[m] - predict_y[m]) * this->x_data[m][n];
+                gradient_b += (this->y_data[m] - predict_y[m]);
+
             }
-            this->weights[n] += learning_rate * ((double) 1 / batch_size) * gradient;
+            this->weights[n] += learning_rate * ((double) 1 / batch_size) * gradient_w;
+            this->bias += learning_rate * ((double) 1 / batch_size) * gradient_b;
         }
         if (loss_ <= error){
             break;
