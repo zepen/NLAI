@@ -6,7 +6,7 @@
 #define NLAI_GRADIENT_BOOSTING_DECISION_TREE_H
 
 
-class gradient_boosting_decision_tree {
+class GradientBoostingDecisionTree {
 
 };
 

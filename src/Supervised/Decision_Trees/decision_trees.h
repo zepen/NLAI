@@ -6,24 +6,25 @@
 #define NLAI_DECISION_TREES_H
 
 namespace nlai {
-    class decision_trees {
+    class DecisionTrees {
 
     public:
-        decision_trees();
-        decision_trees *dt = new decision_trees;
-        decision_trees *left_node;
-        decision_trees *right_node;
+        DecisionTrees();
+        DecisionTrees *dt = new DecisionTrees;
+        DecisionTrees *left_node;
+        DecisionTrees *right_node;
 
     private:
 
     };
 
-    class regression_tree : public decision_trees{
+    class RegressionTree : public DecisionTrees{
 
 
     };
 
-    class classification_tree : public decision_trees{
+    class ClassificationTree : public DecisionTrees{
+
 
     };
 }

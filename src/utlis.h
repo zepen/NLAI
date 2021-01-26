@@ -10,7 +10,7 @@
 #include <cmath>
 #include <fstream>
 #include<iostream>
-#include <windows.h>
+//#include <windows.h>
 #include <unistd.h>
 #include <algorithm>
 #include <random>

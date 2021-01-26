@@ -4,6 +4,6 @@
 #include "../../utlis.h"
 #include "neural_network.h"
 
-void neural_network::show_print() {
+void NeuralNetwork::show_print() {
     std::cout << "nn algorithm" << std::endl;
 }

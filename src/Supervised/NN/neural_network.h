@@ -6,9 +6,9 @@
 #define NLAI_NEURAL_NETWORK_H
 
 
-class neural_network {
+class NeuralNetwork {
 public:
-    neural_network () = default;
+    NeuralNetwork () = default;
     void show_print();
 
 };

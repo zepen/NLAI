@@ -6,7 +6,7 @@
 #define NLAI_RECURRENT_NEURAL_NETWORK_H
 
 
-class recurrent_neural_network {
+class RecurrentNeuralNetwork {
 
 };
 

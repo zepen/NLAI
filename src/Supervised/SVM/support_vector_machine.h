@@ -5,10 +5,9 @@
 #ifndef NLAI_SVM_H
 #define NLAI_SVM_H
 
-class support_vector_machine {
+class SupportVectorMachine {
 public:
-    support_vector_machine() = default;
-
+    SupportVectorMachine() = default;
     void show_print();
 
 };

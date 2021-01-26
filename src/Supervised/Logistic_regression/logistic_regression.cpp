@@ -6,15 +6,15 @@
 #include "../../utlis.h"
 #include "logistic_regression.h"
 
-nlai::logistic_regression::logistic_regression() = default;
+nlai::LogisticRegression::LogisticRegression() = default;
 
-nlai::logistic_regression::~logistic_regression() = default;
+nlai::LogisticRegression::~LogisticRegression() = default;
 
-void nlai::logistic_regression::show_info() {
+void nlai::LogisticRegression::show_info() {
     std::cout << "[INFO] This is logistic regression algorithm!" << std::endl;
 }
 
-nlai::logistic_regression::logistic_regression(unsigned int features_size, unsigned labels_num=2) {
+nlai::LogisticRegression::LogisticRegression(unsigned int features_size, unsigned labels_num=2) {
     show_info();
     std::cout << "[INFO] init all params..." << std::endl;
     for (int i = 0; i < features_size; i++){
@@ -25,7 +25,7 @@ nlai::logistic_regression::logistic_regression(unsigned int features_size, unsig
     this->label_num = labels_num;
 }
 
-std::vector<double> nlai::logistic_regression::logist(std::vector<std::vector<double>> x_data){
+std::vector<double> nlai::LogisticRegression::logist(std::vector<std::vector<double>> x_data){
     std::vector<double> predict_y;
     for (auto &sample : x_data){
         double y = 0;
@@ -38,7 +38,7 @@ std::vector<double> nlai::logistic_regression::logist(std::vector<std::vector<do
     return predict_y;
 }
 
-double nlai::logistic_regression::loss(std::vector<double> predict_y, std::vector<double> real_y, unsigned batch_size){
+double nlai::LogisticRegression::loss(std::vector<double> predict_y, std::vector<double> real_y, unsigned batch_size){
     double sum_loss = 0;
     for (int i = 0; i < predict_y.size(); i++){
         sum_loss += real_y[i] * log(predict_y[i]) + (1 - real_y[i]) * log(1 - predict_y[i]);
@@ -47,7 +47,7 @@ double nlai::logistic_regression::loss(std::vector<double> predict_y, std::vecto
 }
 
 
-std::vector<double> nlai::logistic_regression::activation_func(std::vector<double> predict_y) {
+std::vector<double> nlai::LogisticRegression::activation_func(std::vector<double> predict_y) {
     std::vector<double> activate_y(predict_y.size());
     for (int i = 0; i < predict_y.size(); i++){
         activate_y[i] = ((double) 1 / (1 + exp(-predict_y[i])));
@@ -56,7 +56,7 @@ std::vector<double> nlai::logistic_regression::activation_func(std::vector<doubl
 }
 
 
-void nlai::logistic_regression::getData(int iter, std::vector<std::vector<double>> train_data, unsigned int batch_size){
+void nlai::LogisticRegression::getData(int iter, std::vector<std::vector<double>> train_data, unsigned int batch_size){
     std::vector<int> gen_index = generate_random(train_data.size(), batch_size);
     std::cout << "[INFO] get "<< iter << " step batch data " << std::endl;
     this->x_data.clear();
@@ -83,7 +83,7 @@ void nlai::logistic_regression::getData(int iter, std::vector<std::vector<double
     }
 }
 
-void nlai::logistic_regression::fit(std::vector<std::vector<double>> train_data,
+void nlai::LogisticRegression::fit(std::vector<std::vector<double>> train_data,
         unsigned int batch_size, double error, int max_iter, float learning_rate) {
     for (int it = 0; it < max_iter; it++){
         getData(it, train_data, batch_size);
@@ -107,22 +107,22 @@ void nlai::logistic_regression::fit(std::vector<std::vector<double>> train_data,
     }
 }
 
-std::vector<double> nlai::logistic_regression::predict(std::vector<std::vector<double>> x_data) {
+std::vector<double> nlai::LogisticRegression::predict(std::vector<std::vector<double>> x_data) {
     return activation_func(logist(std::move(x_data)));
 }
 
-std::vector<double> nlai::logistic_regression::get_weights(){
+std::vector<double> nlai::LogisticRegression::get_weights(){
     return this->weights;
 }
 
-double nlai::logistic_regression::get_bias() {
+double nlai::LogisticRegression::get_bias() {
     return this->bias;
 }
 
-std::vector<std::vector<double>> nlai::logistic_regression::get_x_data() {
+std::vector<std::vector<double>> nlai::LogisticRegression::get_x_data() {
     return this->x_data;
 }
 
-std::vector<double> nlai::logistic_regression::get_y_data() {
+std::vector<double> nlai::LogisticRegression::get_y_data() {
     return this->y_data;
 }

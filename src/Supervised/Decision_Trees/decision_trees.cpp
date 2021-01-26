@@ -4,4 +4,4 @@
 
 #include "decision_trees.h"
 
-nlai::decision_trees::decision_trees() = default;
+nlai::DecisionTrees::DecisionTrees() = default;

@@ -6,7 +6,7 @@
 #define NLAI_NAIVE_BAYES_H
 
 
-class Naive_Bayes {
+class NaiveBayes {
 
 };
 
