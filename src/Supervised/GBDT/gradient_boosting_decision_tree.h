@@ -5,8 +5,19 @@
 #ifndef NLAI_GRADIENT_BOOSTING_DECISION_TREE_H
 #define NLAI_GRADIENT_BOOSTING_DECISION_TREE_H
 
+class BinaryTree {
+
+    BinaryTree(){
+
+    }
+
+
+};
+
 
 class GradientBoostingDecisionTree {
+
+
 
 };
 
