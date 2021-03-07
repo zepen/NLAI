@@ -1,33 +1,8 @@
 //
 // Created by User on 2019/4/19.
 //
-#include "../src/Supervised/Logistic_regression/logistic_regression.h"
-#include "../src/Supervised/Svm/support_vector_machine.h"
-#include "../src/Supervised/Neural_network/neural_network.h"
-
-//class BinaryTree{
-//public:
-//    BinaryTree *rightChild;
-//    BinaryTree *leftChild;
-//    int values = 0;
-//    BinaryTree() {
-//        rightChild = nullptr;
-//        leftChild = nullptr;
-//    }
-//    ~BinaryTree() {
-//        delete rightChild;
-//        delete leftChild;
-//    }
-//
-//    void add_values();
-//
-//};
-//
-//void BinaryTree::add_values() {
-//
-//
-//}
-
+#include "../src/linear/logistic_regression.h"
+#include "../src/linear/support_vector_machine.h"
 
 int main(int argc, char**argv) {
     std::cout << "Let's start" << std::endl;
@@ -45,23 +20,5 @@ int main(int argc, char**argv) {
     std::vector<double> y_pred = lr->predict(lr->get_x_data());
     confusion_matrix(y_true, y_pred, 0.5);
     delete lr;
-//    auto *bt = new BinaryTree();
-//    bt->values = 1;
-//    bt->leftChild = new BinaryTree();
-//    bt->rightChild = new BinaryTree();
-//    bt->leftChild->values = 2;
-//    bt->rightChild->values = 3;
-//    std::cout << bt->values << std::endl;
-//    std::cout << bt->leftChild->values << std::endl;
-//    std::cout << bt->rightChild->values << std::endl;
-
-//    bt->leftChild->leftChild->values = 4;
-//    bt->leftChild->rightchild->values = 5;
-//
-//    bt->rightchild->leftChild->values = 6;
-//    bt->rightchild->rightchild->values = 7;
-//    delete bt;
     return 0;
 }
-
-

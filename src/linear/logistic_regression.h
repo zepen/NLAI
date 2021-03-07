@@ -5,7 +5,7 @@
 #ifndef NLAI_LOGISTIC_REGRESSION_H
 #define NLAI_LOGISTIC_REGRESSION_H
 
-#include "../../utlis.h"
+#include "../utlis.h"
 
 namespace nlai {
 
