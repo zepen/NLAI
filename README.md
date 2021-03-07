@@ -1,2 +1,7 @@
-## NLAI
-Just for keep learning about machine learning and deep learning
+# NLAI
+自研机器学习框架
+
+### 任务目标
+* 深入理解机器学习原理
+
+* 加强基于C++的工程实现
